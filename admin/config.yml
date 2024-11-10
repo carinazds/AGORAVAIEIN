@@ -2,31 +2,34 @@ backend:
   name: git-gateway
   branch: main  # Substitua com o branch correto do seu repositório
 
-media_folder: "images/uploads" # Local de armazenamento de imagens
-public_folder: "/images/uploads"
+media_folder: "images/uploads"  # Local de armazenamento de imagens
+public_folder: "/images/uploads"  # Caminho para imagens no site
 
 collections:
+  # Coleção de Pizzas
   - name: "pizzas"
     label: "Pizzas"
-    folder: "content/menu"
-    create: true
-    slug: "{{slug}}"
+    folder: "content/menu"  # Pasta onde as pizzas serão armazenadas
+    create: true  # Permite criar novos arquivos de pizzas
+    slug: "{{slug}}"  # Define o formato do slug (URL)
     fields:
       - { label: "Nome da Pizza", name: "title", widget: "string" }
       - { label: "Preço", name: "price", widget: "number" }
       - { label: "Descrição", name: "description", widget: "text" }
       - { label: "Imagem", name: "image", widget: "image" }
 
+  # Coleção sobre a pizzaria
   - name: "sobre"
     label: "Sobre a Pizzaria"
-    file: "content/sobre.md"
+    file: "content/sobre.md"  # Caminho do arquivo específico
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Conteúdo", name: "body", widget: "markdown" }
 
+  # Coleção de contato
   - name: "contato"
     label: "Informações de Contato"
-    file: "content/contato.md"
+    file: "content/contato.md"  # Caminho do arquivo específico
     fields:
       - { label: "Telefone", name: "phone", widget: "string" }
       - { label: "Endereço", name: "address", widget: "string" }
