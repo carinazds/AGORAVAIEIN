@@ -8,27 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/cms.min.css">
   </head>
   <body>
-    <!-- Script para o Netlify Identity -->
+    <!-- Carregar o Netlify Identity antes do CMS -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Script para o Netlify CMS -->
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/cms.min.js"></script>
-
     <script>
       // Inicializa o Netlify Identity
       if (window.NetlifyIdentity) {
         window.NetlifyIdentity.init();
       }
+    </script>
 
-      // Inicializa o CMS após a autenticação
-      window.addEventListener('DOMContentLoaded', function() {
-        // Verifica se o usuário está autenticado
-        if (window.NetlifyIdentity && window.NetlifyIdentity.currentUser()) {
-          CMS.init();
-        } else {
-          window.NetlifyIdentity.open();  // Abre o painel de login caso o usuário não esteja autenticado
-        }
-      });
+    <!-- Importação do Netlify CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/cms.min.js"></script>
+    <script>
+      // Inicializa o CMS com a configuração correta
+      CMS.init();
     </script>
   </body>
 </html>
