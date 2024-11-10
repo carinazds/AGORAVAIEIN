@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: main  # Substitua com o branch correto do seu repositório
+
+media_folder: "images/uploads" # Local de armazenamento de imagens
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pizzas"
+    label: "Pizzas"
+    folder: "content/menu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome da Pizza", name: "title", widget: "string" }
+      - { label: "Preço", name: "price", widget: "number" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Imagem", name: "image", widget: "image" }
+
+  - name: "sobre"
+    label: "Sobre a Pizzaria"
+    file: "content/sobre.md"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: "contato"
+    label: "Informações de Contato"
+    file: "content/contato.md"
+    fields:
+      - { label: "Telefone", name: "phone", widget: "string" }
+      - { label: "Endereço", name: "address", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
