@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main  # Substitua com o branch correto do seu repositório
+  branch: master  # Substitua com o branch correto do seu repositório
 
 media_folder: "images/uploads"  # Local de armazenamento de imagens
 public_folder: "/images/uploads"  # Caminho para imagens no site
@@ -19,7 +19,7 @@ collections:
       - { label: "Imagem", name: "image", widget: "image" }
 
   # Coleção sobre a pizzaria
-  - name: "sobre"
+  - name: "sobre"a
     label: "Sobre a Pizzaria"
     file: "content/sobre.md"  # Caminho do arquivo específico
     fields:
